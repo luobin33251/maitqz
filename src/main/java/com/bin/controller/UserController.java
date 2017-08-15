@@ -7,15 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by Administrator on 2017/8/15.
  */
 @RestController
-public class IndexController {
+@RequestMapping("/user")
+public class UserController {
 
-    @RequestMapping("/")
-    public String index() {
-        return "Hello";
-    }
-
-    @RequestMapping("/noLogin")
-    public String noLogin() {
-        return "noLogin";
+    @RequestMapping("getUserInfo")
+    public String getUserInfo() {
+        return "luobin";
     }
 }

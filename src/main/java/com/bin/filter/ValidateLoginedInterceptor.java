@@ -15,8 +15,10 @@ public class ValidateLoginedInterceptor extends HandlerInterceptorAdapter{
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String token = request.getHeader(Constants.CLIENT_TOKEN);
+        String a = request.getContextPath();
+        System.out.println(a);
         if(!StringUtils.equals(token, "token")) {
-            response.sendRedirect("/noLogin");
+            response.sendRedirect(a+"/noLogin");
             return false;
         }
         return true;
